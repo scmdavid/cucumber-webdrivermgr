@@ -20,6 +20,8 @@ public class Stepdefs {
     @Before
     public void initTest() {
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
         options.addArguments("--ignore-certificate-errors");
         webDriver = new ChromeDriver(options);
     }
